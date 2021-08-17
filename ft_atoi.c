@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i] - 48);
 		i++;
 	}
-	if (nb > 922337203685477588 && neg == -1)
+	if (nb > 9223372036854775807 && neg == -1)
 		return (0);
 	if (nb > 9223372036854775807 && neg == 1)
 		return (-1);
