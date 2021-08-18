@@ -6,7 +6,7 @@
 /*   By: eperaita <eperaita@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:08:43 by eperaita          #+#    #+#             */
-/*   Updated: 2021/08/09 18:16:16 by eperaita         ###   ########.fr       */
+/*   Updated: 2021/08/17 19:57:42 by eperaita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,19 @@ int	ft_atoi(const char *str)
 		nb = nb * 10 + (str[i] - 48);
 		i++;
 	}
+<<<<<<< HEAD
 	if (nb > 9223372036854775807 && neg == -1)
 		return (0);
 	if (nb > 9223372036854775807 && neg == 1)
 		return (-1);
+=======
+	if (nb > 9223372036854775807)
+	{
+		if (neg == -1)
+			return (0);
+		else
+			return (-1);
+	}
+>>>>>>> 3b8faa01e3a523334e3ced2c0078a2dddfcdc740
 	return (nb * neg);
 }
