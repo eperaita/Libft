@@ -57,27 +57,31 @@ SRC_BONUS = 	ft_lstnew.c\
 				ft_lstiter.c\
 				ft_lstmap.c\
 
-LIB_H = libft.h
+INCLUDES = libft.h
 
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 OBJ = $(SRC:.c=.o)
 
 CC = gcc
-LIB = ar rc
+AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 RM = /bin/rm -f
 
+
+
 all: $(NAME)
 
+$(NAME) : $(OBJ) $(INCLUDES)
+	$(AR) $(NAME) $(OBJ)
 
-$(NAME) : $(OBJ) $(LIB_H)
-	$(CC) $(CFLAGS) -c $(SRC)
-	$(LIB)  $(NAME) $(OBJ)
+bonus: $(OBJ_BONUS) $(INCLUDES)
+	   $(AR) $(NAME) $(OBJ_BONUS)
 
-bonus: $(OBJ_BONUS) $(OBJ) $(LIB_H)
-	$(CC) $(CFLAGS) -c $(SRC_BONUS)
-	$(LIB) $(NAME) $(OBJ) $(OBJ_BONUS)
+%.o : %.c
+	$(CC) $(CFLAGS) -c $(SRC) $(SRC_BONUS)
+
+
 
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
