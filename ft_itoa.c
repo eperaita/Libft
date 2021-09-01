@@ -6,12 +6,12 @@
 /*   By: eperaita <eperaita@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 15:16:51 by eperaita          #+#    #+#             */
-/*   Updated: 2021/08/11 09:57:19 by eperaita         ###   ########.fr       */
+/*   Updated: 2021/08/30 11:06:41 by eperaita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_fill_char(char *buff, size_t len, long int n, size_t neg)
+char	*ft_fill_char(char *buff, size_t len, long n, size_t neg)
 {
 	buff[len + neg] = '\0';
 	while (len)
@@ -25,7 +25,7 @@ char	*ft_fill_char(char *buff, size_t len, long int n, size_t neg)
 	return (buff);
 }
 
-size_t	len_int(long int n, size_t len)
+size_t	len_int(long n, size_t len)
 {
 	while (n > 9)
 	{
@@ -41,11 +41,11 @@ char	*ft_itoa(int n)
 	char		*buff;
 	size_t		len;
 	size_t		neg;
-	long int	nb;
+	long		nb;
 
 	neg = 0;
 	len = 0;
-	nb = (long int)n;
+	nb = (long)n;
 	if (nb < 0)
 	{
 		neg = 1;
