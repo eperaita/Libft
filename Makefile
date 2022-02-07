@@ -76,7 +76,7 @@ $(NAME) : $(OBJ) $(INCLUDES)
 	$(AR) $(NAME) $(OBJ)
 
 bonus: $(OBJ_BONUS) $(INCLUDES)
-	   $(AR) $(NAME) $(OBJ_BONUS)
+	   $(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $(SRC) $(SRC_BONUS)
